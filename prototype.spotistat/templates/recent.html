@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Most recent track</title>
+  </head>
+  <body>
+    <h1>MusiStat — Most Recent Track</h1>
+
+    {% if user %}
+      <p>Welcome, <strong>{{ user.display_name }}</strong>!</p>
+    {% endif %}
+
+    {% if track %}
+      <p><strong>Track:</strong> {{ track.name }}</p>
+      <p><strong>Artist(s):</strong> {{ track.artists }}</p>
+      <p><strong>Played at:</strong> {{ track.played_at }}</p>
+    {% else %}
+      <p>No recent tracks found.</p>
+    {% endif %}
+
+    <p><a href="{{ url_for('logout') }}">Logout</a></p>
+  </body>
+</html>
